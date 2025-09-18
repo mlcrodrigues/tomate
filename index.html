@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Produtividade - MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>App de Produtividade</h1>
+
+        <div id="pomodoro-timer" class="timer">
+            <h2 id="timer-display">25:00</h2>
+            <div class="timer-controls">
+                <button id="start-btn">Iniciar</button>
+                <button id="pause-btn">Pausar</button>
+                <button id="reset-btn">Parar</button>
+            </div>
+        </div>
+
+        <div id="task-list-section" class="task-list-container">
+            <h3>Minhas Tarefas</h3>
+            <div class="task-input-container">
+                <input type="text" id="new-task-input" placeholder="Adicionar nova tarefa...">
+                <button id="add-task-btn">Adicionar</button>
+            </div>
+            <ul id="tasks">
+                </ul>
+        </div>
+        
+        <div id="game-section" class="hidden">
+    <h3>Pausa para o Jogo!</h3>
+    <div id="bubble-game-container">
+        </div>
+</div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
