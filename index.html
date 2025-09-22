@@ -7,37 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main>
 
-    <main class="container">
-        <h1>App de Produtividade</h1>
-
-        <div id="pomodoro-timer" class="timer">
-            <h2 id="timer-display">25:00</h2>
-            <div class="timer-controls">
-                <button id="start-btn">Iniciar</button>
-                <button id="pause-btn">Pausar</button>
-                <button id="reset-btn">Parar</button>
-            </div>
-        </div>
-
-        <div id="task-list-section" class="task-list-container">
-            <h3>Minhas Tarefas</h3>
-            <div class="task-input-container">
-                <input type="text" id="new-task-input" placeholder="Adicionar nova tarefa...">
-                <button id="add-task-btn">Adicionar</button>
-            </div>
-            <ul id="tasks">
-                </ul>
-        </div>
+    <section class="container">
+        <h1>Tomate Produtivo</h1>
+        <p>Gerencie seu tempo com a técnica Pomodoro</p>
         
-        <div id="game-section" class="hidden">
-    <h3>Pausa para o Jogo!</h3>
-    <div id="bubble-game-container">
-        </div>
-</div>
+        <section class="timer-section">
+          <div class ="timer-settings">
+              <label for="work-duration">Duração do Trabalho (min):</label>
+              <input type="number" id="work-duration" value="25" min="1" max="60">
+              <label for="break-duration">Duração do Intervalo (min):</label>
+              <input type="number" id="break-duration" value="5" min="1" max="30">
+          </div>
+        </section>
 
+        <section class="clock-section">  
+          <canvas id="clock-canvas" width="150" height="150"></canvas>
+            <div class="analog-clock">
+              <div class="clock-face">
+                  <div class="hand hour-hand"></div>
+                  <div class="hand minute-hand"></div>
+                  <div class="hand second-hand"></div>
+              </div>
+            </div>
+          
+            <div class="pomodoro-timer" id="timer-display">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+          
+            <div class="controls">
+              <button id="start-btn">Iniciar</button>
+              <button id="pause-btn">Pausar</button>
+              <button id="reset-btn">Resetar</button>
+            </div>  
+
+        </section>
+    </section>
+
+    <section class="tasks-section">
+        <h2>Lista de Tarefas</h2>
+        <input id="new-task-input" type="text" />
+        <button id="add-task-btn">Adicionar</button>
+        <ul id="tasks"></ul>
+    </section>
+    </section>
+
+    
     </main>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html>    
+    

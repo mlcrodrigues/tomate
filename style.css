@@ -1,61 +1,119 @@
-/* Estilos Gerais para o Corpo da Página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: #333;
+    min-height: 400px;
+    background-color: #efefef;
+    color: #780101;
 }
 
-/* Estilos para o Contêiner Principal */
-.container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+main {
+    max-width: 800px;
     width: 90%;
-    max-width: 500px;
+    margin: 20px auto;
+}   
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: #017817;
+}
+
+p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #0a3817;
+}
+
+.container {
+    background-color: #e6cdcd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clock-section {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    columns: 3;
+    justify-content: center;
+    align-items: center;   
+    gap: 20px;
+    border: #218838 0.5px solid;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.timer-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
+}  
+.timer-settings label {
+    font-weight: bold;
+    color: #666;
+}
+
+#work-duration, #break-duration {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
 }
 
-/* Estilos para o Título */
-h1 {
-    color: #4a54e1;
-    margin-bottom: 20px;
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
 }
 
-/* Estilos do Timer Pomodoro */
-.timer {
-    margin-bottom: 30px;
+button {
+    background-color: #960000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+
+}
+
+button:hover {
+    background-color: #017817;
+}
+
+button:active {
+    background-color: #017817;
 }
 
 #timer-display {
     font-size: 4rem;
     font-weight: bold;
-    color: #4a54e1;
     margin-bottom: 20px;
+    color: #780101;
+}
+.timer.running {
+    color: #017817;
 }
 
-.timer-controls button {
-    background-color: #4a54e1;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+.tasks-section {
+    background-color: #e6cdcd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
-.timer-controls button:hover {
-    background-color: #3842c5;
-}
-
-/* Estilos para a Lista de Tarefas */
 .task-list-container {
     text-align: left;
 }
@@ -78,25 +136,31 @@ h3 {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    font-weight: bold;
 }
-
 #add-task-btn {
-    background-color: #28a745;
-    color: #fff;
+    background-color: #960000;
+    color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     margin-left: 10px;
-    transition: background-color 0.3s ease;
 }
 
 #add-task-btn:hover {
-    background-color: #218838;
+    background-color: #017817;
 }
 
-/* Estilos para a Lista (UL) e Itens da Lista (LI) */
+.task-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 #tasks {
     list-style: none;
     padding: 0;
@@ -111,6 +175,9 @@ h3 {
     align-items: center;
     justify-content: space-between;
     transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    font-size: 2rem;
 }
 
 #tasks li.completed {
@@ -127,64 +194,50 @@ h3 {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-left: 10px;
-    color: #888;
+    color: #d0d0d0;
 }
 
 .task-actions button.complete-btn {
-    color: #28a745;
+    color: #218838;
 }
 
 .task-actions button.delete-btn {
     color: #dc3545;
 }
 
-/* Estilos para esconder a seção do jogo inicialmente */
-.hidden {
-    display: none;
-}
+@media (max-width: 600px) {
+    main {
+        padding: 8px;
+    }
+    #timer-display {
+    font-size: 2rem;
+    }
 
-/* Estilos para a seção do jogo */
-#game-section {
-    padding: 20px;
-    background-color: #e6f7ff;
-    border-radius: 10px;
-    margin-top: 30px;
-}
+    .container, .tasks-section {
+        padding: 8px;
+    }
+    #clock-canvas {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .controls button {
+        width: 100%;
+        margin: 4px 0;
+    }
 
-#bubble-game-container {
-    width: 100%;
-    height: 300px; /* Altura fixa para o jogo */
-    background-color: #fff;
-    border-radius: 10px;
-    border: 2px solid #b3e0ff;
-    position: relative; /* Essencial para as bolhas */
-    overflow: hidden; /* Garante que as bolhas fiquem dentro do contêiner */
-    cursor: crosshair;
-}
+    #add-task-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+        margin-left: 0;
+    }
 
-/* Estilos para as bolhas */
-.bubble {
-    position: absolute; /* Para que possamos posicionar em qualquer lugar */
-    border-radius: 50%; /* Faz a forma de círculo */
-    background-color: #4a54e1;
-    opacity: 0.7;
-    cursor: pointer;
-    animation: bubble-move 10s linear infinite; /* Animação de movimento */
-}
-
-/* Animação para fazer as bolhas subirem */
-@keyframes bubble-move {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(-100%); }
-}
-
-/* Estilo para a bolha estourada */
-.bubble.popped {
-    background-color: transparent;
-    border: 2px solid #ff4d4d;
-    transform: scale(1.5);
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
+    input[type="number"], input[type="text"] {
+        max-width: 100%;
+    }
+    .clock-section {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
